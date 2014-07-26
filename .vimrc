@@ -34,10 +34,11 @@ set ruler
 set showmatch
 
 " Use spaces instead of tab and lazy backspacing for indentation
-set expandtab
-set shiftwidth=2
-set tabstop=2
 set softtabstop=2
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set shiftround
 
 " No error sounds
 set noerrorbells
@@ -59,3 +60,9 @@ match Error /\%81v.\+/
 " Tab completion works properly (UNIX Style) and shows menu of possible options.
 set wildmenu
 set wildmode=longest:full
+
+" Better scrolling
+set scrolloff=5
+
+" No backups.
+set nobackup
