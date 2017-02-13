@@ -54,9 +54,6 @@ syntax on
 " Favorite colorscheme
 :colors slate
 
-" Text over 80 characters per line turns red
-match Error /\%81v.\+/
-
 " Tab completion works properly (UNIX Style) and shows menu of possible options.
 set wildmenu
 set wildmode=longest:full
