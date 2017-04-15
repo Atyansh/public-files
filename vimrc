@@ -1,6 +1,12 @@
 " Remove strict vi compatibility
 set nocompatible
 
+" Enable clipboard sharing across sessions
+set clipboard=unnamed
+
+" Use mouse to navigate
+set mouse=a
+
 " Show line number
 set nu
 
