@@ -1,6 +1,33 @@
 " Remove strict vi compatibility
 set nocompatible
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+filetype off                 " required
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" Syntastic
+Plugin 'vim-syntastic/syntastic'
+
+" Solarized theme
+Plugin 'altercation/vim-colors-solarized'
+
+" vimproc 
+Plugin 'Shougo/vimproc.vim'
+
+" Haskell checking
+Plugin 'eagletmt/ghcmod-vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
 " Enable clipboard sharing across sessions
 set clipboard=unnamed
 
@@ -54,11 +81,10 @@ set novisualbell
 set modeline
 set showmode
 
-" Show syntax
-syntax on
-
 " Favorite colorscheme
-:colors slate
+syntax enable
+set background=dark
+colorscheme solarized
 
 " Tab completion works properly (UNIX Style) and shows menu of possible options.
 set wildmenu
