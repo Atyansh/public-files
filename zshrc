@@ -24,22 +24,11 @@ export LS_COLORS='no=00;38;5;244:rs=0:di=00;38;5;33:ln=00;38;5;37:mh=00:pi=48;5;
 export EDITOR=vim
 export PATH=$HOME/.local/bin:$PATH
 
-# Enable auto-completion
-autoload -Uz compinit
-compinit
-
-# Enable themes (Use 'prompt')
-# autoload -Uz promptinit
-# promptinit
-
-# Use preferred prompt
-# prompt suse
-
 # Add traversable menu to auto-completion
 zstyle ':completion:*' menu select
 
 # Show description of auto-completions
-zstyle ':completion:*:descriptions' format '%U%B%d%b%u' 
+zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 
 # Show warning when nothing to auto-complete
 zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
@@ -97,7 +86,6 @@ alias ll="ls -l"
 alias lh="ls -lh"
 alias la="ls -a"
 alias grep="grep --color=auto"
-#alias ocaml="rlwrap ocaml"
 alias unlock="python ~/.scripts/unlock.py"
 
 # Custom prompt config
@@ -110,5 +98,9 @@ POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="↱"
 POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX="↳ "
 #POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# Sane bindings for movement
+bindkey "^[b" backward-word
+bindkey "^[f" forward-word
+bindkey "^[a" beginning-of-line
+bindkey "^[e" end-of-line
+bindkey "^[w" vi-backward-kill-word
