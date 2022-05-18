@@ -39,7 +39,7 @@ compinit
 zstyle ':completion:*' menu select
 
 # Show description of auto-completions
-zstyle ':completion:*:descriptions' format '%U%B%d%b%u' 
+zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 
 # Show warning when nothing to auto-complete
 zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
@@ -97,7 +97,6 @@ alias ll="ls -l"
 alias lh="ls -lh"
 alias la="ls -a"
 alias grep="grep --color=auto"
-#alias ocaml="rlwrap ocaml"
 alias unlock="python ~/.scripts/unlock.py"
 
 # Custom prompt config
