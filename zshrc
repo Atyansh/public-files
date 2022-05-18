@@ -112,3 +112,16 @@ POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX="↳ "
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# Sane bindings for movement
+bindkey "^[b" backward-word
+bindkey "^[f" forward-word
+bindkey "^[a" beginning-of-line
+bindkey "^[e" end-of-line
+bindkey "^[w" vi-backward-kill-word
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/atyansh/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/atyansh/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/atyansh/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/atyansh/google-cloud-sdk/completion.zsh.inc'; fi

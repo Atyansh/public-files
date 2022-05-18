@@ -10,6 +10,9 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+" Rust checking
+Plugin 'rust-lang/rust.vim'
+
 " Syntastic
 Plugin 'vim-syntastic/syntastic'
 
@@ -21,6 +24,9 @@ Plugin 'Shougo/vimproc.vim'
 
 " Haskell checking
 Plugin 'eagletmt/ghcmod-vim'
+
+" Flow
+" Plugin 'flowtype/vim-flow'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -95,3 +101,5 @@ set scrolloff=5
 
 " No backups.
 set nobackup
+
+let &colorcolumn = join(range(81,999), ',')
