@@ -24,9 +24,12 @@ if [[ -f ~/.scripts/antigen.zsh ]]; then
   antigen bundle MichaelAquilina/zsh-you-should-use
   antigen bundle paulirish/git-open
   antigen theme romkatv/powerlevel10k
-  antigen bundle zsh-users/zsh-syntax-highlighting
+  antigen bundle zdharma-continuum/fast-syntax-highlighting
   antigen bundle Atyansh/zsh-syntax-highlighting-filetypes
   antigen apply
+
+  # Apply custom syntax highlighting theme (if available)
+  [[ -f ~/.config/fsh/solarized-ls.ini ]] && fast-theme XDG:solarized-ls >/dev/null 2>&1
 else
   echo "Warning: antigen.zsh not found at ~/.scripts/antigen.zsh"
 fi
@@ -42,6 +45,9 @@ export PATH=$HOME/.local/bin:$PATH
 
 # Add traversable menu to auto-completion
 zstyle ':completion:*' menu select
+
+# Use LS_COLORS for completion colors
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # Show description of auto-completions
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
@@ -98,6 +104,25 @@ else
   # Linux
   alias ls="ls --color=auto"
 fi
+
+# Smart git-open: print URL when SSH'd, open browser otherwise
+git-open() {
+  if [[ -n "$SSH_CLIENT" ]]; then
+    command git-open --print "$@"
+  else
+    command git-open "$@"
+  fi
+}
+
+# Wrap git to intercept 'git open' for SSH sessions
+git() {
+  if [[ "$1" == "open" && -n "$SSH_CLIENT" ]]; then
+    shift
+    command git-open --print "$@"
+  else
+    command git "$@"
+  fi
+}
 
 # Common aliases
 alias python="python3"
