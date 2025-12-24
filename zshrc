@@ -12,6 +12,10 @@ fi
 # Set exports
 export TERM="xterm-256color"
 
+if [[ -f ~/.scripts/aliases.zsh ]]; then
+  source ~/.scripts/aliases.zsh
+fi
+
 # Load antigen (with guard)
 if [[ -f ~/.scripts/antigen.zsh ]]; then
   source ~/.scripts/antigen.zsh
@@ -25,7 +29,7 @@ if [[ -f ~/.scripts/antigen.zsh ]]; then
   antigen bundle paulirish/git-open
   antigen theme romkatv/powerlevel10k
   antigen bundle zdharma-continuum/fast-syntax-highlighting
-  antigen bundle Atyansh/zsh-syntax-highlighting-filetypes
+  antigen bundle Atyansh/fast-syntax-highlighting-filetypes
   antigen apply
 
   # Apply custom syntax highlighting theme (if available)
