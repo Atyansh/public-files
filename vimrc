@@ -23,7 +23,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'Shougo/vimproc.vim'
 
 " Haskell checking
-Plugin 'eagletmt/ghcmod-vim'
+" Plugin 'eagletmt/ghcmod-vim'
 
 " Flow
 " Plugin 'flowtype/vim-flow'
