@@ -90,7 +90,7 @@ set showmode
 " Favorite colorscheme
 syntax enable
 set background=dark
-colorscheme solarized
+silent! colorscheme solarized
 
 " Tab completion works properly (UNIX Style) and shows menu of possible options.
 set wildmenu
