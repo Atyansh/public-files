@@ -12,6 +12,10 @@ fi
 # Set exports
 export TERM="xterm-256color"
 
+if [[ -f ~/.scripts/aliases.zsh ]]; then
+  source ~/.scripts/aliases.zsh
+fi
+
 # Load antigen (with guard)
 if [[ -f ~/.scripts/antigen.zsh ]]; then
   source ~/.scripts/antigen.zsh
